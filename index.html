@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rodrigo's Coffee — Coming Soon</title>
+  <meta name="description" content="Rodrigo's Coffee — Llíber, Spain. Something good is coming.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page-shell" aria-label="Rodrigo's Coffee coming soon landing page">
+    <img class="master-art" src="assets/coming-soon-master.png" width="1178" height="1335" alt="Rodrigo's Coffee coming soon page">
+    <nav class="hotspot-nav" aria-label="Primary">
+      <a class="hotspot nav-coffee" href="#coffee"><span class="sr-only">Coffee</span></a>
+      <a class="hotspot nav-story" href="#story"><span class="sr-only">Story</span></a>
+      <a class="hotspot nav-lifestyle" href="#lifestyle"><span class="sr-only">Lifestyle</span></a>
+      <a class="hotspot nav-join" href="#share-the-cup"><span class="sr-only">Join the list</span></a>
+    </nav>
+    <section id="coffee" class="semantic-anchor coffee-anchor" aria-label="Coffee"></section>
+    <section id="story" class="semantic-anchor story-anchor" aria-label="Story"></section>
+    <section id="lifestyle" class="semantic-anchor lifestyle-anchor" aria-label="Lifestyle"></section>
+    <form class="signup-form hero-form" data-source="Hero signup" novalidate>
+      <label class="sr-only" for="hero-email">Email address</label>
+      <input id="hero-email" name="email" type="email" autocomplete="email" placeholder="Your email address" required>
+      <button type="submit">JOIN THE LIST</button>
+      <label class="honeypot" aria-hidden="true">Leave this field empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      <p class="form-status" aria-live="polite"></p>
+    </form>
+    <form id="share-the-cup" class="signup-form lower-form" data-source="Share the cup signup" novalidate>
+      <label class="sr-only" for="lower-email">Email address</label>
+      <input id="lower-email" name="email" type="email" autocomplete="email" placeholder="Your email address" required>
+      <button type="submit">SHARE THE CUP</button>
+      <label class="honeypot" aria-hidden="true">Leave this field empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      <p class="form-status" aria-live="polite"></p>
+    </form>
+    <a class="hotspot footer-coffee" href="#coffee"><span class="sr-only">Coffee</span></a>
+    <a class="hotspot footer-story" href="#story"><span class="sr-only">Story</span></a>
+    <a class="hotspot footer-lifestyle" href="#lifestyle"><span class="sr-only">Lifestyle</span></a>
+    <a class="hotspot footer-contact" href="mailto:roderik.nieboer@gmail.com"><span class="sr-only">Contact</span></a>
+  </main>
+  <script src="newsletter.js" defer></script>
+</body>
+</html>
