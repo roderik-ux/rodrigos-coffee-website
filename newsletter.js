@@ -13,7 +13,18 @@
             data: {
               type: "profile",
               attributes: {
-                email: email
+                email: email,
+                subscriptions: {
+                  email: {
+                    marketing: {
+                      consent: "SUBSCRIBED"
+                    }
+                  }
+                },
+                properties: {
+                  Brand: "Rodrigo's Coffee",
+                  "Signup Source": source
+                }
               }
             }
           }
@@ -33,7 +44,7 @@
       method: "POST",
       headers: {
         "accept": "application/vnd.api+json",
-        "content-type": "application/json",
+        "content-type": "application/vnd.api+json",
         "revision": "2025-01-15"
       },
       body: JSON.stringify(payload)
