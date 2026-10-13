@@ -11,7 +11,7 @@ body { margin: 0; background: #f8f8f2; color: #111; font-family: Arial, Helvetic
 .signup-form button:disabled { cursor: wait; opacity: .92; }
 
 /* Exact alignment to the baked-in fields in the 1178×1335 master artwork. */
-.hero-form { left: 3.82%; top: 30.64%; width: 26.06%; height: 2.62%; grid-template-columns: 62.2% 37.8%; }
+.hero-form { left: 3.82%; top: 30.64%; width: 26.06%; height: 3.28%; grid-template-columns: 62.2% 37.8%; }
 .hero-form input, .hero-form button { font-size: clamp(6px, .79vw, 10px); }
 
 .lower-form { left: 36.93%; top: 87.04%; width: 56.11%; height: 2.10%; grid-template-columns: 68.83% 31.17%; }
