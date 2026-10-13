@@ -81,10 +81,6 @@ module.exports = async function handler(req, res) {
                 type: "profile",
                 attributes: {
                   email: cleanEmail,
-                  properties: {
-                    Brand: "Rodrigo's Coffee",
-                    "Signup Source": source || "Website signup"
-                  },
                   subscriptions: {
                     email: {
                       marketing: {
