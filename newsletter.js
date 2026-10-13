@@ -1,62 +1,20 @@
 (() => {
-  const PUBLIC_KEY = "QUdvbH";
-  const LIST_ID = "YguFST";
-  const ENDPOINT = `https://a.klaviyo.com/client/subscriptions/?company_id=${encodeURIComponent(PUBLIC_KEY)}`;
-
   async function subscribe(email, source) {
-    const payload = {
-      data: {
-        type: "subscription",
-        attributes: {
-          custom_source: source,
-          profile: {
-            data: {
-              type: "profile",
-              attributes: {
-                email: email,
-                subscriptions: {
-                  email: {
-                    marketing: {
-                      consent: "SUBSCRIBED"
-                    }
-                  }
-                },
-                properties: {
-                  Brand: "Rodrigo's Coffee",
-                  "Signup Source": source
-                }
-              }
-            }
-          }
-        },
-        relationships: {
-          list: {
-            data: {
-              type: "list",
-              id: LIST_ID
-            }
-          }
-        }
-      }
-    };
-
-    const response = await fetch(ENDPOINT, {
+    const response = await fetch("/api/subscribe", {
       method: "POST",
       headers: {
-        "accept": "application/vnd.api+json",
-        "content-type": "application/vnd.api+json",
-        "revision": "2025-01-15"
+        "content-type": "application/json"
       },
-      body: JSON.stringify(payload)
+      body: JSON.stringify({ email, source })
     });
 
-    if (response.status !== 202) {
+    if (!response.ok) {
       let detail = "";
       try {
         const body = await response.json();
-        detail = body?.errors?.[0]?.detail || "";
+        detail = body?.error || "";
       } catch (_) {}
-      throw new Error(detail || `Klaviyo request failed (${response.status})`);
+      throw new Error(detail || `Signup failed (${response.status})`);
     }
   }
 
@@ -85,7 +43,7 @@
         await subscribe(emailInput.value.trim(), form.dataset.source || "Website signup");
         window.location.assign("thanks.html");
       } catch (error) {
-        console.error("Klaviyo signup error:", error);
+        console.error("Signup error:", error);
         status.textContent = "Something went wrong. Please try again.";
         button.disabled = false;
         button.textContent = originalLabel;
