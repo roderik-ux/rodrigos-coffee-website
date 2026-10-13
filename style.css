@@ -9,10 +9,14 @@ body { margin: 0; background: #f8f8f2; color: #111; font-family: Arial, Helvetic
 .signup-form input[type="email"]::placeholder { color: #8d8d8d; opacity: 1; }
 .signup-form button { cursor: pointer; background: #f4ad00; color: #0b2418; font-weight: 800; letter-spacing: .11em; white-space: nowrap; padding: 0 1.25em; }
 .signup-form button:disabled { cursor: wait; opacity: .92; }
-.hero-form { left: 3.90%; top: 29.96%; width: 25.64%; height: 2.62%; grid-template-columns: 61% 39%; }
+
+/* Exact alignment to the baked-in fields in the 1178×1335 master artwork. */
+.hero-form { left: 3.82%; top: 30.64%; width: 26.06%; height: 3.28%; grid-template-columns: 62.2% 37.8%; }
 .hero-form input, .hero-form button { font-size: clamp(6px, .79vw, 10px); }
-.lower-form { left: 36.93%; top: 85.02%; width: 54.16%; height: 2.10%; grid-template-columns: 68% 32%; }
+
+.lower-form { left: 36.93%; top: 87.04%; width: 56.11%; height: 2.10%; grid-template-columns: 68.83% 31.17%; }
 .lower-form input, .lower-form button { font-size: clamp(6px, .82vw, 10px); }
+
 .form-status { position: absolute; left: 0; top: calc(100% + 4px); margin: 0; color: #fff; font-size: clamp(7px, .72vw, 10px); line-height: 1.25; text-shadow: 0 1px 2px rgba(0,0,0,.55); white-space: nowrap; }
 .honeypot { position: absolute !important; left: -9999px !important; width: 1px !important; height: 1px !important; overflow: hidden !important; }
 .hotspot { position: absolute; z-index: 3; display: block; background: transparent; }
